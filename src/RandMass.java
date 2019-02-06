@@ -1,6 +1,6 @@
 import java.util.Random;
 import java.util.Scanner;
-
+/** Функция заполнения массива заданной длины случайными числами. */
 
 public class RandMass {
 
@@ -9,24 +9,24 @@ public class RandMass {
         System.out.println("Задайте количество элементов массива");
         int n = scanner.nextInt();
         double[] a = new double[n];
-        rMass(a, n);
-        printMass(a, n);
+        rMass(a);
+        printMass(a);
 
     }
 
-    private static void rMass(double[] b, int t) {
+    private static void rMass(double[] b) {
         Random r = new Random();
-        for (int i = 0; i < t; i++) {
+        for (int i = 0; i < b.length; i++) {
             b[i] = r.nextDouble();
         }
     }
 
-    public static void printMass(double[] b, int t) {
+    public static void printMass(double[] b) {
         System.out.print("[");
-        for (int i = 0; i < t - 1; i++) {
+        for (int i = 0; i < b.length - 1; i++) {
             System.out.print(b[i] + ", ");
         }
-        System.out.print(b[t - 1] + "]");
+        System.out.print(b[b.length - 1] + "]");
     }
 
 }
